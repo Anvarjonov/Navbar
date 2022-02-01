@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    transition: all .3s ease-out;
+}
+body{
+    min-height: 100vh;
+    background: #000;
+}  
+   
+#menu-btn{
+    position: fixed;
+    top: 20px;
+    right: 60px;
+    line-height: 70px;
+    background: yellow; 
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    z-index: 1000;
+    transition: 500ms;
+    transform: translate(70%);
+}
+
+#menu-btn.fa-times{
+    transform: rotate(180deg);
+    background: #000;
+    color: #fff;
+}
+.navbar{
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 50px;
+    clip-path: circle(0% at 95.3% 8.5%);
+}
+.navbar.active{
+    clip-path: circle(140% at 95.3% 8.5%);
+}
+.navbar a{
+    font-size: 30px;
+    padding-bottom: 30px;
+    color: #000;
+}
+.navbar a::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: #000;
+    pointer-events: none;
+    font-weight: bolder;
+    letter-spacing: .4em;
+    opacity: 0;
+    z-index: -1;
+}
+.navbar a:hover::before{
+    letter-spacing: em;
+    opacity: .1;
+    transition: .3s ease-out;
+}
